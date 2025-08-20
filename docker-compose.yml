@@ -9,6 +9,7 @@ services:
       - ./airflow/dags:/opt/airflow/dags
     environment:
       - AIRFLOW__CORE__SIMPLE_AUTH_MANAGER_ALL_ADMINS=True
+      - AIRFLOW_CONN_KAFKA={"extra":{"bootstrap.servers":"broker-1:19092"}}
     ports:
       - "8080:8080"
 
